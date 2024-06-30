@@ -1,7 +1,16 @@
+<title>
+    <?php
+    echo "Storm";
+    ?>
+</title>
 <?php
 try {
-    $userName = $_POST["username"];
+    $userName = $_POST["email"];
     $password = $_POST["password"];
+    if (empty($userName) || empty($password)) {
+        echo "Username or password is empty";
+        return;
+    }
     $conn = new PDO("sqlite:database.db");
     $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
