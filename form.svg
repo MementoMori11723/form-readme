@@ -37,10 +37,12 @@
     <body xmlns="http://www.w3.org/1999/xhtml">
       <div class="form-container">
         <form action="store.php" method="POST">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required><br>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required><br>
+          <label>Email:
+            <input type="email" id="email" name="email"><br>
+          </label>
+          <label for="password">Password:
+            <input type="password" id="password" name="password"><br>
+          </label>
           <input type="submit" value="Submit">
         </form>
       </div>
