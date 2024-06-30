@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+  <style>
+    .form-container {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    .form-container input[type="email"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-container input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <foreignObject width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <div class="form-container">
+        <form action="store.php" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </body>
+  </foreignObject>
+</svg>
