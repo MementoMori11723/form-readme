@@ -1,51 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
-  <style>
-    .form-container {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .form-container label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-    .form-container input[type="email"],
-    .form-container input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .form-container input[type="submit"] {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .form-container input[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <foreignObject width="100%" height="100%">
-    <body xmlns="http://www.w3.org/1999/xhtml">
-      <div class="form-container">
-        <form action="store.php" method="POST">
-          <label>Email:
-            <input type="email" id="email" name="email"><br>
-          </label>
-          <label for="password">Password:
-            <input type="password" id="password" name="password"><br>
-          </label>
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    </body>
-  </foreignObject>
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Email Input -->
+  <text x="10" y="40" font-family="Arial" font-size="14" fill="black">Email:</text>
+  <rect x="70" y="25" width="200" height="30" fill="white" stroke="black" stroke-width="1"/>
+  <text x="75" y="45" font-family="Arial" font-size="14" fill="grey">Enter your email</text>
+  
+  <!-- Password Input -->
+  <text x="10" y="80" font-family="Arial" font-size="14" fill="black">Password:</text>
+  <rect x="70" y="65" width="200" height="30" fill="white" stroke="black" stroke-width="1"/>
+  <text x="75" y="85" font-family="Arial" font-size="14" fill="grey">Enter your password</text>
+  
+  <!-- Submit Button -->
+  <rect x="100" y="110" width="100" height="30" fill="#4CAF50" stroke="black" stroke-width="1"/>
+  <text x="135" y="130" font-family="Arial" font-size="14" fill="white" text-anchor="middle" cursor="pointer">
+    Submit
+  </text>
+  
+  <!-- JavaScript to handle form submission -->
+  <script type="application/ecmascript">
+    <![CDATA[
+      // Function to collect data and send it to storm.php
+      function submitForm() {
+        var email = "user@example.com";  // Placeholder values for the inputs
+        var password = "password";
+        var formData = new FormData();
+        formData.append("email", email);
+        formData.append("password", password);
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "storm.php", true);
+        xhr.send(formData);
+        
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            console.log("Form submitted successfully.");
+          } else {
+            console.log("Error submitting form.");
+          }
+        };
+      }
+
+      // Adding event listener to the 'Submit' button
+      document.querySelector("text").addEventListener("click", submitForm);
+    ]]>
+  </script>
 </svg>
